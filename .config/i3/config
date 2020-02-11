@@ -31,7 +31,7 @@ font pango:Noto Sans Mono, Icons 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Shift+Return exec kitty
+bindsym $mod+Shift+Return exec WINIT_HIDPI_FACTOR=1 alacritty
 #bindsym $mod+Return exec kitty 
 
 # kill focused window
@@ -177,16 +177,19 @@ bar {
 #bindsym XF86AudioMute exec amixer -q set Master toggle
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set 'Master' 5%+ #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer set 'Master' 5%- #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+#pactl set-sink-volume 0 +5%
+
 # Screen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 2 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 3 # decrease screen brightness
 
 exec nm-applet
-exec mate-power-manager
-exec mate-volume-control-applet
-exec redshift -l 49.2765:-123.2177
-exec xinput set-prop 'ELAN0501:00 04F3:3091 Touchpad' 'libinput Tapping Enabled (281)' '1'
-exec xinput set-prop 'ELAN0501:00 04F3:3091 Touchpad' 'libinput Click Method Enabled (297)' '0, 1' 
+#exec mate-power-manager
+#exec mate-volume-control-applet
+exec keepassxc
+#exec redshift -l 49.2765:-123.2177
+#exec xinput set-prop 'ELAN0501:00 04F3:3091 Touchpad' 'libinput Tapping Enabled (281)' '1'
+#exec xinput set-prop 'ELAN0501:00 04F3:3091 Touchpad' 'libinput Click Method Enabled (297)' '0, 1' 

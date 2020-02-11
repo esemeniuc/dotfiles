@@ -96,10 +96,16 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
-
+#PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
 export TERM="xterm-256color"
+export ANDROID_SDK=~/Android/Sdk
+export PATH=$PATH:~/.yarn/bin/:$ANDROID_SDK/platform-tools/
+export FZF_DEFAULT_COMMAND='fd --type f'
+
 alias vim="nvim"
 
 alias gdate1="GIT_AUTHOR_DATE='1 day ago' GIT_COMMITTER_DATE='1 day ago' git commit"
 alias gdate2="GIT_AUTHOR_DATE=`date -d '2 days ago'` GIT_COMMITTER_DATE=`date -d '2 days ago'` git commit"
+
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh

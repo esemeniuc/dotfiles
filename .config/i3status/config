@@ -9,6 +9,7 @@ general {
 #order += "run_watch DHCP"
 #order += "run_watch VPNC"
 order += "volume master"
+#order += "bar"
 order += "path_exists VPN"
 order += "wireless _first_"
 #order += "ethernet eth0"
@@ -16,6 +17,7 @@ order += "battery 0"
 #order += "cpu_temperature 0"
 #order += "load"
 order += "tztime local"
+order += "memory"
 
 volume master {
     format = "%volume "
@@ -25,7 +27,7 @@ volume master {
     mixer_idx = 0
 } 
 wireless _first_ {
-        format_up = "W: %essid%quality %ip"
+        format_up = "W: %essid %quality %ip"
         format_down = "W: down"
 }
 
@@ -34,6 +36,10 @@ ethernet eth0 {
         format_up = "E: %ip (%speed)"
         format_down = "E: down"
 }
+
+#bar {
+#	status_command = "printf '%.0f' $(xbacklight)"
+#}
 
 battery 0 {
         format = "%status %percentage %remaining"
@@ -80,4 +86,10 @@ cpu_temperature 0 {
 
 disk "/" {
         format = "%free"
+}
+
+memory {
+        format = "%available"
+        threshold_degraded = "1G"
+        format_degraded = "MEMORY < %available"
 }
