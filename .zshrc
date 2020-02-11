@@ -97,7 +97,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
+export EDITOR=nvim
 export TERM="xterm-256color"
 export ANDROID_SDK=~/Android/Sdk
 export PATH=$PATH:~/.yarn/bin/:$ANDROID_SDK/platform-tools/
