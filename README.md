@@ -12,3 +12,10 @@ yadm status
 yadm commit -m 'updated i3 status'
 yadm push
 ```
+
+# Get config on new system
+```bash
+yay -S yadm
+yadm clone https://github.com/esemeniuc/dotfiles.git
+yadm status
+```
