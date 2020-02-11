@@ -16,6 +16,7 @@ yadm push
 # Get config on new system
 ```bash
 yay -S yadm
-yadm clone https://github.com/esemeniuc/dotfiles.git
+yadm clone git@github.com:esemeniuc/dotfiles.git
+#yadm clone https://github.com/esemeniuc/dotfiles.git
 yadm status
 ```
