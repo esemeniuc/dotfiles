@@ -1,6 +1,9 @@
 # dotfiles
 a repo for my configs managed by yadm :D
 
+# Getting started
+See https://yadm.io/docs/getting_started
+
 # Updating a config file
 
 ```bash
