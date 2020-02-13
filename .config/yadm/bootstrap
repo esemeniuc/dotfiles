@@ -1,0 +1,13 @@
+#!/bin/bash
+
+#Essentials
+sudo pacman -S zsh firefox i3 dmenu alacritty neovim fzf tmux xclip
+
+#Personal
+sudo pacman -S docker nodejs aria2 keepassxc syncthing fd redshift yarn mitmproxy ccache pasystray pavucontrol
+
+yay -S yadm jetbrains-toolbox google-chrome 
+sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+ssh-keygen
+sudo systemctl enable syncthing@eric.service
+sudo systemctl start syncthing@eric.service
