@@ -190,3 +190,5 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 3 # decrease screen brightnes
 #exec mate-power-manager
 exec --no-startup-id keepassxc
 exec --no-startup-id pasystray
+exec --no-startup-id redshift
+bindsym Control+q nop

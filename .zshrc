@@ -100,7 +100,7 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR=nvim
 export TERM="xterm-256color"
 export ANDROID_SDK=~/Android/Sdk
-export PATH=$PATH:~/.yarn/bin/:$ANDROID_SDK/platform-tools/
+export PATH=$PATH:~/.yarn/bin/:~/.cargo/bin/:$ANDROID_SDK/platform-tools/
 export FZF_DEFAULT_COMMAND='fd --type f'
 
 alias vim="nvim"
