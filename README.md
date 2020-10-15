@@ -2,6 +2,11 @@
 a repo for my configs managed by yadm :D
 
 # Getting started
+
+```bash
+yadm clone git@github.com:esemeniuc/dotfiles.git
+```
+
 See https://yadm.io/docs/getting_started
 
 # Updating a config file
