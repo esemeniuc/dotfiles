@@ -68,7 +68,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git fzf tmux systemd rust kubectl docker)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -108,6 +108,3 @@ alias vim="nvim"
 
 alias gdate1="GIT_AUTHOR_DATE='1 day ago' GIT_COMMITTER_DATE='1 day ago' git commit"
 alias gdate2="GIT_AUTHOR_DATE=`date -d '2 days ago'` GIT_COMMITTER_DATE=`date -d '2 days ago'` git commit"
-
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh

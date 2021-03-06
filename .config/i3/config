@@ -41,8 +41,8 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec mate-terminal
-#bindsym $mod+Return exec WINIT_HIDPI_FACTOR=1 alacritty
+#bindsym $mod+Return exec mate-terminal
+bindsym $mod+Return exec WINIT_HIDPI_FACTOR=1 alacritty
 #bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
@@ -191,6 +191,9 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 3 # decrease screen brightnes
 exec --no-startup-id /home/eric/.screenlayout/main.sh
 exec --no-startup-id keepassxc
 exec --no-startup-id pasystray
+exec --no-startup-id /usr/lib/mate-polkit/polkit-mate-authentication-agent-1
+
 exec --no-startup-id redshift
+exec --no-startup-id nm-applet
 exec --no-startup-id udiskie -t
 bindsym Control+q nop
