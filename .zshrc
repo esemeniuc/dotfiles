@@ -108,3 +108,9 @@ alias vim="nvim"
 
 alias gdate1="GIT_AUTHOR_DATE='1 day ago' GIT_COMMITTER_DATE='1 day ago' git commit"
 alias gdate2="GIT_AUTHOR_DATE=`date -d '2 days ago'` GIT_COMMITTER_DATE=`date -d '2 days ago'` git commit"
+
+function swap()         
+{
+    local TMPFILE=tmp.$$
+    mv "$1" $TMPFILE && mv "$2" "$1" && mv $TMPFILE "$2"
+}
