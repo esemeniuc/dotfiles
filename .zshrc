@@ -98,6 +98,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export EDITOR=nvim
+export TERMINAL=alacritty
 export JAVA_HOME=/usr/lib/jvm/default
 export TERM="xterm-256color"
 export ANDROID_SDK=~/Android/Sdk
