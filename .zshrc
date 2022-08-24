@@ -68,7 +68,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fzf tmux systemd kubectl docker)
+plugins=(git fzf tmux kubectl docker)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -102,8 +102,10 @@ export TERMINAL=alacritty
 export JAVA_HOME=/usr/lib/jvm/default
 export TERM="xterm-256color"
 export ANDROID_SDK=~/Android/Sdk
-export PATH=$PATH:~/.yarn/bin:~/.cargo/bin:$ANDROID_SDK/platform-tools
+export VOLTA_HOME="$HOME/.volta"
 export FZF_DEFAULT_COMMAND='fd --type f'
+
+export PATH=$VOLTA_HOME/bin:$PATH:~/.yarn/bin:~/.cargo/bin:$ANDROID_SDK/platform-tools
 
 alias vim="nvim"
 
