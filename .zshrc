@@ -70,7 +70,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fzf tmux docker)
+plugins=(git kubectl fzf tmux docker)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -107,13 +107,25 @@ export ANDROID_SDK=~/Android/Sdk
 export VOLTA_HOME="$HOME/.volta"
 export FZF_DEFAULT_COMMAND='fd --type f'
 
-export PATH=$VOLTA_HOME/bin:$PATH:~/.yarn/bin:~/.cargo/bin:$ANDROID_SDK/platform-tools
+export PATH=$HOME/.local/share/solana/install/active_release/bin:$HOME/.local/share/JetBrains/Toolbox/scripts:$VOLTA_HOME/bin:$PATH:~/.yarn/bin:~/.cargo/bin:$ANDROID_SDK/platform-tools
 alias vim="nvim"
 
 alias gdate1="GIT_AUTHOR_DATE='1 day ago' GIT_COMMITTER_DATE='1 day ago' git commit"
-alias gdate2="GIT_AUTHOR_DATE=`date -d '2 days ago'` GIT_COMMITTER_DATE=`date -d '2 days ago'` git commit"
+alias gdate2='GIT_AUTHOR_DATE=`date -d "2 days ago"` GIT_COMMITTER_DATE=`date -d "2 days ago"` git commit'
+alias grbh='git reset $(git merge-base master $(git rev-parse --abbrev-ref HEAD))'
+alias grsr='git reset --hard --recurse-submodule'
 function swap()         
 {
     local TMPFILE=tmp.$$
     mv "$1" $TMPFILE && mv "$2" "$1" && mv $TMPFILE "$2"
 }
+
+
+alias pak="kubectl --kubeconfig $HOME/dev/infra/block-engine/secrets/mainnet/amsterdam/kubeconfig"
+alias pah="helm --kubeconfig=$HOME/dev/infra/block-engine/secrets/mainnet/amsterdam/kubeconfig"
+alias pfk="kubectl --kubeconfig $HOME/dev/infra/block-engine/secrets/mainnet/frankfurt/kubeconfig"
+alias pfh="helm --kubeconfig=$HOME/dev/infra/block-engine/secrets/mainnet/frankfurt/kubeconfig"
+alias knt="kubectl --kubeconfig $HOME/dev/infra/block-engine/secrets/testnet/nyc/kubeconfig"
+alias hnt="helm --kubeconfig=$HOME/dev/infra/block-engine/secrets/testnet/nyc/kubeconfig"
+alias kdt="kubectl --kubeconfig $HOME/dev/infra/block-engine/secrets/testnet/dallas/kubeconfig"
+alias hdt="helm --kubeconfig=$HOME/dev/infra/block-engine/secrets/testnet/dallas/kubeconfig"
