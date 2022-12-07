@@ -116,12 +116,12 @@ alias gdate1="GIT_AUTHOR_DATE='1 day ago' GIT_COMMITTER_DATE='1 day ago' git com
 alias gdate2='GIT_AUTHOR_DATE=`date -d "2 days ago"` GIT_COMMITTER_DATE=`date -d "2 days ago"` git commit'
 alias grbh='git reset $(git merge-base master $(git rev-parse --abbrev-ref HEAD))'
 alias grsr='git reset --hard --recurse-submodule'
+
 function swap()         
 {
     local TMPFILE=tmp.$$
     mv "$1" $TMPFILE && mv "$2" "$1" && mv $TMPFILE "$2"
 }
-
 
 alias pak="kubectl --kubeconfig $HOME/dev/infra/block-engine/secrets/mainnet/amsterdam/kubeconfig"
 alias pah="helm --kubeconfig=$HOME/dev/infra/block-engine/secrets/mainnet/amsterdam/kubeconfig"

@@ -190,6 +190,11 @@ bar {
 bindsym XF86MonBrightnessUp exec xbacklight -inc 3 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 3 # decrease screen brightness
 
+#interactive screenshot by pressing printscreen
+bindsym Print exec flameshot gui --clipboard
+#crop-area screenshot by pressing Mod + printscreen
+bindsym $mod+Print exec flameshot full --clipboard
+
 #exec mate-power-manager
 exec --no-startup-id keepassxc
 exec --no-startup-id "mons -a &; disown"
