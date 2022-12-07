@@ -103,11 +103,11 @@ export EDITOR=nvim
 export TERMINAL=alacritty
 export JAVA_HOME=/usr/lib/jvm/default
 export TERM="xterm-256color"
-export ANDROID_SDK=~/Android/Sdk
+export ANDROID_SDK=$HOME/Android/Sdk
 export VOLTA_HOME="$HOME/.volta"
 export FZF_DEFAULT_COMMAND='fd --type f'
 
-export PATH=$HOME/.local/share/solana/install/active_release/bin:$HOME/.local/share/JetBrains/Toolbox/scripts:$VOLTA_HOME/bin:$PATH:~/.yarn/bin:~/.cargo/bin:$ANDROID_SDK/platform-tools
+export PATH=$HOME/.local/share/solana/install/active_release/bin:$HOME/.local/share/JetBrains/Toolbox/scripts:$VOLTA_HOME/bin:$HOME/.yarn/bin:$HOME/.cargo/bin:$ANDROID_SDK/platform-tools:$PATH
 alias vim="nvim"
 
 
