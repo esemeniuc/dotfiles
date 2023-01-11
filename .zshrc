@@ -70,7 +70,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git kubectl fzf tmux docker)
+plugins=(git kubectl fzf tmux)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -123,10 +123,14 @@ function swap()
     mv "$1" $TMPFILE && mv "$2" "$1" && mv $TMPFILE "$2"
 }
 
+export HISTSIZE=999999999
+export SAVEHIST=$HISTSIZE
+
 alias pak="kubectl --kubeconfig $HOME/dev/infra/block-engine/secrets/mainnet/amsterdam/kubeconfig"
 alias pah="helm --kubeconfig=$HOME/dev/infra/block-engine/secrets/mainnet/amsterdam/kubeconfig"
 alias pfk="kubectl --kubeconfig $HOME/dev/infra/block-engine/secrets/mainnet/frankfurt/kubeconfig"
 alias pfh="helm --kubeconfig=$HOME/dev/infra/block-engine/secrets/mainnet/frankfurt/kubeconfig"
+alias pnk="kubectl --kubeconfig=$HOME/dev/infra/block-engine/secrets/mainnet/ny/kubeconfig"
 alias knt="kubectl --kubeconfig $HOME/dev/infra/block-engine/secrets/testnet/nyc/kubeconfig"
 alias hnt="helm --kubeconfig=$HOME/dev/infra/block-engine/secrets/testnet/nyc/kubeconfig"
 alias kdt="kubectl --kubeconfig $HOME/dev/infra/block-engine/secrets/testnet/dallas/kubeconfig"
