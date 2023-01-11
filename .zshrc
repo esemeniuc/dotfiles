@@ -107,7 +107,7 @@ export ANDROID_SDK=$HOME/Android/Sdk
 export VOLTA_HOME="$HOME/.volta"
 export FZF_DEFAULT_COMMAND='fd --type f'
 
-export PATH=$HOME/.local/share/solana/install/active_release/bin:$HOME/.local/share/JetBrains/Toolbox/scripts:$VOLTA_HOME/bin:$HOME/.yarn/bin:$HOME/.cargo/bin:$ANDROID_SDK/platform-tools:$PATH
+export PATH=$HOME/.local/share/JetBrains/Toolbox/scripts:$VOLTA_HOME/bin:$HOME/.yarn/bin:$HOME/.cargo/bin:$ANDROID_SDK/platform-tools:$PATH
 alias vim="nvim"
 
 
@@ -131,3 +131,6 @@ alias knt="kubectl --kubeconfig $HOME/dev/infra/block-engine/secrets/testnet/nyc
 alias hnt="helm --kubeconfig=$HOME/dev/infra/block-engine/secrets/testnet/nyc/kubeconfig"
 alias kdt="kubectl --kubeconfig $HOME/dev/infra/block-engine/secrets/testnet/dallas/kubeconfig"
 alias hdt="helm --kubeconfig=$HOME/dev/infra/block-engine/secrets/testnet/dallas/kubeconfig"
+
+alias ptk="kubectl --kubeconfig $HOME/dev/infra/block-engine/secrets/mainnet/tokyo/kubeconfig"
+alias hth="helm --kubeconfig=$HOME/dev/infra/block-engine/secrets/mainnet/tokyo/kubeconfig"
