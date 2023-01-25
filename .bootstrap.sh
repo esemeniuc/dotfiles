@@ -2,7 +2,10 @@
 set -eux
 
 # install regular packages 
-sudo pacman -S zsh firefox alacritty rofi rofi-emoji noto-fonts noto-fonts-emoji noto-fonts-cjk flameshot pasystray neovim pasystray fzf tmux keepassxc syncthing rustup tree tailscale qalculate-gtk docker obs-studio xclip
+sudo pacman -S zsh firefox alacritty rofi rofi-emoji noto-fonts noto-fonts-emoji noto-fonts-cjk flameshot pasystray neovim pasystray fzf tmux keepassxc syncthing tree tailscale qalculate-gtk docker obs-studio xclip
+
+# dev tooling
+sudo pacman -S clang make mold protobuf rustup
 
 # set up paru
 wget https://aur.archlinux.org/cgit/aur.git/snapshot/paru-bin.tar.gz
@@ -23,6 +26,7 @@ volta install node@16 yarn@1
 ln -s /usr/bin/nvim /usr/bin/vim
 sudo usermod -aG docker eric # avoid needing root
 sudo systemctl enable tailscaled docker syncthing@eric.service
+sudo bash -c "echo DefaultTimeoutStopSec=10s >> /etc/systemd/system.conf"
 
 # todo: 
 # reduce wait period for nomachine
