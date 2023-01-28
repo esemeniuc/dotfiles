@@ -32,7 +32,7 @@ ln -s /usr/bin/nvim /usr/bin/vim
 sudo usermod -aG docker eric # avoid needing root
 sudo systemctl enable tailscaled docker syncthing@eric.service
 sudo bash -c "echo DefaultTimeoutStopSec=10s >> /etc/systemd/system.conf"
-sudo ln -s ./30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf 
+sudo ln -s $(realpath ./30-touchpad.conf) /etc/X11/xorg.conf.d/30-touchpad.conf 
 
 # customize firefox
 PROFILE_DIR=$(grep -Pzo "\[Profile0\]\n(.*?\n){2}Path=\K\w+.[\w-]+" ~/.mozilla/firefox/profiles.ini | tr -d '\0')
