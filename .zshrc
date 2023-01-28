@@ -70,7 +70,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git kubectl fzf tmux)
+plugins=(git kubectl fzf)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -108,10 +108,9 @@ export VOLTA_HOME="$HOME/.volta"
 export FZF_DEFAULT_COMMAND='fd --type f'
 
 export PATH=$HOME/.local/share/JetBrains/Toolbox/scripts:$VOLTA_HOME/bin:$HOME/.yarn/bin:$HOME/.cargo/bin:$ANDROID_SDK/platform-tools:$PATH
+
 alias vim="nvim"
-
-
-alias ytd="youtube-dl --external-downloader=aria2c --external-downloader-args '--min-split-size=1M --max-connection-per-server=16 --max-concurrent-downloads=16 --split=16'"
+alias ytd="yt-dlp --downloader=aria2c --downloader-args='--min-split-size=1M --max-connection-per-server=16 --max-concurrent-downloads=16 --split=16'"
 alias gdate1="GIT_AUTHOR_DATE='1 day ago' GIT_COMMITTER_DATE='1 day ago' git commit"
 alias gdate2='GIT_AUTHOR_DATE=`date -d "2 days ago"` GIT_COMMITTER_DATE=`date -d "2 days ago"` git commit'
 alias grbh='git reset $(git merge-base master $(git rev-parse --abbrev-ref HEAD))'
