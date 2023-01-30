@@ -16,6 +16,7 @@ order += "wireless _first_"
 order += "battery 0"
 #order += "cpu_temperature 0"
 #order += "load"
+order += "tztime utc"
 order += "tztime local"
 order += "memory"
 
@@ -71,9 +72,9 @@ tztime local {
         format = "%Y-%m-%d %H:%M"
 }
 
-tztime berlin {
-        format = "%Y-%m-%d %H:%M:%S %Z"
-        timezone = "Europe/Berlin"
+tztime utc {
+        format = "%H:%M:%S"
+        timezone = "Etc/UTC"
 }
 
 load {

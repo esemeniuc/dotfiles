@@ -107,23 +107,24 @@ export ANDROID_SDK=$HOME/Android/Sdk
 export VOLTA_HOME="$HOME/.volta"
 export FZF_DEFAULT_COMMAND='fd --type f'
 
-export PATH=$HOME/.local/share/JetBrains/Toolbox/scripts:$VOLTA_HOME/bin:$HOME/.yarn/bin:$HOME/.cargo/bin:$ANDROID_SDK/platform-tools:$PATH
+# shell history tweak
+export HISTSIZE=999999999
+export SAVEHIST=$HISTSIZE
 
+# path
+export PATH=$HOME/.foundry/bin:$HOME/.local/share/JetBrains/Toolbox/scripts:$VOLTA_HOME/bin:$HOME/.yarn/bin:$HOME/.cargo/bin:$ANDROID_SDK/platform-tools:$PATH
+
+# random aliases
 alias vim="nvim"
+
+# parallel download
 alias ytd="yt-dlp --downloader=aria2c --downloader-args='--min-split-size=1M --max-connection-per-server=16 --max-concurrent-downloads=16 --split=16'"
+
+# git
 alias gdate1="GIT_AUTHOR_DATE='1 day ago' GIT_COMMITTER_DATE='1 day ago' git commit"
 alias gdate2='GIT_AUTHOR_DATE=`date -d "2 days ago"` GIT_COMMITTER_DATE=`date -d "2 days ago"` git commit'
 alias grbh='git reset $(git merge-base master $(git rev-parse --abbrev-ref HEAD))'
 alias grsr='git reset --hard --recurse-submodule'
-
-function swap()         
-{
-    local TMPFILE=tmp.$$
-    mv "$1" $TMPFILE && mv "$2" "$1" && mv $TMPFILE "$2"
-}
-
-export HISTSIZE=999999999
-export SAVEHIST=$HISTSIZE
 
 alias pak="kubectl --kubeconfig $HOME/dev/infra/block-engine/secrets/mainnet/amsterdam/kubeconfig"
 alias pah="helm --kubeconfig=$HOME/dev/infra/block-engine/secrets/mainnet/amsterdam/kubeconfig"
@@ -137,3 +138,10 @@ alias hdt="helm --kubeconfig=$HOME/dev/infra/block-engine/secrets/testnet/dallas
 
 alias ptk="kubectl --kubeconfig $HOME/dev/infra/block-engine/secrets/mainnet/tokyo/kubeconfig"
 alias hth="helm --kubeconfig=$HOME/dev/infra/block-engine/secrets/mainnet/tokyo/kubeconfig"
+
+function swap()         
+{
+    local TMPFILE=tmp.$$
+    mv "$1" $TMPFILE && mv "$2" "$1" && mv $TMPFILE "$2"
+}
+

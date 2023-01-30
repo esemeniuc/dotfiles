@@ -201,8 +201,8 @@ bar {
 }
 
 # Screen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 3 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 3 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec light -A 3 # increase screen brightness
+bindsym XF86MonBrightnessDown exec light -U 3 # decrease screen brightness
 
 # interactive size screenshot by pressing printscreen
 bindsym Print exec flameshot gui --clipboard

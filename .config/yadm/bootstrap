@@ -2,10 +2,10 @@
 set -eux
 
 # install regular packages 
-sudo pacman -S zsh firefox alacritty rofi rofi-emoji noto-fonts noto-fonts-emoji noto-fonts-cjk flameshot pasystray neovim pasystray fzf tmux keepassxc syncthing tree tailscale qalculate-gtk docker obs-studio xclip python github-cli tmux yt-dlp aria2
+sudo pacman -S zsh firefox alacritty rofi rofi-emoji noto-fonts noto-fonts-emoji noto-fonts-cjk flameshot pasystray neovim pasystray fzf tmux keepassxc syncthing tree tailscale qalculate-gtk docker obs-studio xclip github-cli tmux yt-dlp aria2
 
 # dev tooling
-sudo pacman -S clang make mold protobuf rustup postgresql terraform docker-compose vault aws-cli-v2 helm
+sudo pacman -S clang make mold protobuf rustup postgresql terraform docker-compose vault aws-cli-v2 helm python jq
 
 # set up paru
 wget https://aur.archlinux.org/cgit/aur.git/snapshot/paru-bin.tar.gz
@@ -13,7 +13,7 @@ tar -xzf paru-bin.tar.gz
 (cd paru-bin && makepkg -si)
 
 # install aur packages
-paru -S yadm volta jetbrains-toolbox nomachine google-chrome slack-desktop solana-bin peazip-qt-bin zoom
+paru -S yadm volta jetbrains-toolbox nomachine google-chrome slack-desktop solana-bin peazip-qt-bin zoom google-cloud-sdk
 
 # oh my zsh
 sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
@@ -23,9 +23,11 @@ rustup install stable
 volta install node@16 yarn@1
 
 # laptop setup
-sudo pacman -S tlp
-sudo systemctl enable tlp.service
-sudo systemctl start tlp.service
+sudo pacman -S tlp light autorandr bluez-utils blueman
+sudo systemctl enable tlp.service bluetooth.service
+sudo systemctl start tlp.service bluetooth.service
+sudo usermod -aG video eric
+paru -S mons
 
 # tweaks
 ln -s /usr/bin/nvim /usr/bin/vim
