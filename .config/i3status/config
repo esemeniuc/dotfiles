@@ -21,7 +21,7 @@ order += "tztime local"
 order += "memory"
 
 volume master {
-    format = "%volume 🔊"
+    format = "🔊 %volume"
     format_muted = "🔇"
     device = "default"
     mixer = "Master"
@@ -40,7 +40,7 @@ ethernet eth0 {
 }
 
 #bar {
-#	status_command = "printf '%.0f' $(xbacklight)"
+#	status_command = "printf '%.0f' $(light)"
 #}
 
 battery 0 {
@@ -69,11 +69,11 @@ path_exists VPN {
 }
 
 tztime local {
-        format = "%Y-%m-%d %H:%M"
+        format = "📅 %Y-%m-%d %H:%M"
 }
 
 tztime utc {
-        format = "%H:%M:%S"
+        format = "🌎 %m-%d %H:%M"
         timezone = "Etc/UTC"
 }
 

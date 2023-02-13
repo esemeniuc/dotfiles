@@ -5,7 +5,7 @@ set -eux
 sudo pacman -S zsh firefox alacritty rofi rofi-emoji noto-fonts noto-fonts-emoji noto-fonts-cjk flameshot pasystray neovim pasystray fzf tmux keepassxc syncthing tree tailscale qalculate-gtk docker obs-studio xclip github-cli tmux yt-dlp aria2
 
 # dev tooling
-sudo pacman -S clang make mold protobuf rustup postgresql terraform docker-compose vault aws-cli-v2 helm python jq
+sudo pacman -S clang make mold protobuf rustup postgresql terraform docker-compose vault aws-cli-v2 helm python jq kubectl
 
 # set up paru
 wget https://aur.archlinux.org/cgit/aur.git/snapshot/paru-bin.tar.gz
@@ -32,9 +32,12 @@ paru -S mons
 # tweaks
 ln -s /usr/bin/nvim /usr/bin/vim
 sudo usermod -aG docker eric # avoid needing root
-sudo systemctl enable tailscaled docker syncthing@eric.service
+sudo systemctl enable tailscaled docker syncthing@eric.service systemd-homed
 sudo bash -c "echo DefaultTimeoutStopSec=10s >> /etc/systemd/system.conf"
 sudo ln -s $(realpath ./30-touchpad.conf) /etc/X11/xorg.conf.d/30-touchpad.conf 
+sudo systemctl mask systemd-rfkill.service
+sudo systemctl mask systemd-rfkill.socket
+sudo localectl set-locale C.UTF-8
 
 # customize firefox
 PROFILE_DIR=$(grep -Pzo "\[Profile0\]\n(.*?\n){2}Path=\K\w+.[\w-]+" ~/.mozilla/firefox/profiles.ini | tr -d '\0')

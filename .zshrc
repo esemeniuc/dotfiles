@@ -120,24 +120,27 @@ alias vim="nvim"
 # parallel download
 alias ytd="yt-dlp --downloader=aria2c --downloader-args='--min-split-size=1M --max-connection-per-server=16 --max-concurrent-downloads=16 --split=16'"
 
+# tailscale
+alias tssg="tailscale status | grep -i"
+
 # git
 alias gdate1="GIT_AUTHOR_DATE='1 day ago' GIT_COMMITTER_DATE='1 day ago' git commit"
 alias gdate2='GIT_AUTHOR_DATE=`date -d "2 days ago"` GIT_COMMITTER_DATE=`date -d "2 days ago"` git commit'
 alias grbh='git reset $(git merge-base master $(git rev-parse --abbrev-ref HEAD))'
 alias grsr='git reset --hard --recurse-submodule'
 
-alias pak="kubectl --kubeconfig $HOME/dev/infra/block-engine/secrets/mainnet/amsterdam/kubeconfig"
-alias pah="helm --kubeconfig=$HOME/dev/infra/block-engine/secrets/mainnet/amsterdam/kubeconfig"
-alias pfk="kubectl --kubeconfig $HOME/dev/infra/block-engine/secrets/mainnet/frankfurt/kubeconfig"
-alias pfh="helm --kubeconfig=$HOME/dev/infra/block-engine/secrets/mainnet/frankfurt/kubeconfig"
-alias pnk="kubectl --kubeconfig=$HOME/dev/infra/block-engine/secrets/mainnet/ny/kubeconfig"
-alias knt="kubectl --kubeconfig $HOME/dev/infra/block-engine/secrets/testnet/nyc/kubeconfig"
-alias hnt="helm --kubeconfig=$HOME/dev/infra/block-engine/secrets/testnet/nyc/kubeconfig"
-alias kdt="kubectl --kubeconfig $HOME/dev/infra/block-engine/secrets/testnet/dallas/kubeconfig"
-alias hdt="helm --kubeconfig=$HOME/dev/infra/block-engine/secrets/testnet/dallas/kubeconfig"
 
-alias ptk="kubectl --kubeconfig $HOME/dev/infra/block-engine/secrets/mainnet/tokyo/kubeconfig"
-alias hth="helm --kubeconfig=$HOME/dev/infra/block-engine/secrets/mainnet/tokyo/kubeconfig"
+JITO_INFRA_DIR=$HOME/dev/infra
+# prod
+alias kam="kubectl --kubeconfig $JITO_INFRA_DIR/block-engine/secrets/mainnet/amsterdam/kubeconfig"
+alias kfm="kubectl --kubeconfig $JITO_INFRA_DIR/block-engine/secrets/mainnet/frankfurt/kubeconfig"
+alias knm="kubectl --kubeconfig $JITO_INFRA_DIR/block-engine/secrets/mainnet/ny/kubeconfig"
+alias ktm="kubectl --kubeconfig $JITO_INFRA_DIR/block-engine/secrets/mainnet/tokyo/kubeconfig"
+
+# test
+alias knt="kubectl --kubeconfig $JITO_INFRA_DIR/block-engine/secrets/testnet/nyc/kubeconfig"
+alias kdt="kubectl --kubeconfig $JITO_INFRA_DIR/block-engine/secrets/testnet/dallas/kubeconfig"
+
 
 function swap()         
 {
