@@ -2,7 +2,7 @@
 set -eux
 
 # install regular packages 
-sudo pacman -S zsh firefox alacritty rofi rofi-emoji noto-fonts noto-fonts-emoji noto-fonts-cjk flameshot pasystray neovim pasystray fzf tmux keepassxc syncthing tree tailscale qalculate-gtk docker obs-studio xclip github-cli tmux yt-dlp aria2
+sudo pacman -S zsh firefox alacritty rofi rofi-emoji noto-fonts noto-fonts-emoji noto-fonts-cjk flameshot pasystray neovim pasystray fzf fd ripgrep tmux keepassxc syncthing tree tailscale qalculate-gtk docker obs-studio xclip github-cli tmux yt-dlp aria2
 
 # dev tooling
 sudo pacman -S clang make mold protobuf rustup postgresql terraform docker-compose vault aws-cli-v2 helm python jq kubectl
