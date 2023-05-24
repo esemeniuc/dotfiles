@@ -148,3 +148,5 @@ function swap()
     mv "$1" $TMPFILE && mv "$2" "$1" && mv $TMPFILE "$2"
 }
 
+# Bind up-arrow but not ctrl-r
+eval "$(atuin init zsh --disable-ctrl-r)"
