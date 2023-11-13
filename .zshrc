@@ -112,7 +112,7 @@ export HISTSIZE=999999999
 export SAVEHIST=$HISTSIZE
 
 # path
-export PATH=$HOME/.local/share/JetBrains/Toolbox/scripts:$VOLTA_HOME/bin:$HOME/.yarn/bin:$HOME/.cargo/bin:$ANDROID_SDK/platform-tools:$PATH
+export PATH=$HOME/.local/share/JetBrains/Toolbox/scripts:$VOLTA_HOME/bin:$HOME/.yarn/bin:$HOME/.cargo/bin:$ANDROID_SDK/platform-tools:$HOME/.local/bin:$PATH
 
 # random aliases
 alias vim="nvim"
@@ -140,9 +140,6 @@ alias ktm="kubectl --kubeconfig $JITO_INFRA_DIR/block-engine/secrets/mainnet/tok
 # test
 alias knt="kubectl --kubeconfig $JITO_INFRA_DIR/block-engine/secrets/testnet/nyc/kubeconfig"
 alias kdt="kubectl --kubeconfig $JITO_INFRA_DIR/block-engine/secrets/testnet/dallas/kubeconfig"
-
-export CC=/usr/local/bin/gcc
-export CXX=/usr/local/bin/g++
 
 function swap()         
 {
