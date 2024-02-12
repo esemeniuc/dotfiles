@@ -1,7 +1,13 @@
-set clipboard+=unnamed
+"""set clipboard+=unnamed
+set clipboard+=unnamedplus
+"""set clipboard+=ideaput
 
+""" Plugins  --------------------------------
 set sneak
 set quickscope
-
 set which-key
+
 set timeoutlen=5000
+
+""" Idea specific settings ------------------
+set ideajoin

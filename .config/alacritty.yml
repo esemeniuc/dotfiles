@@ -5,3 +5,5 @@ font:
 
   size: 7
 
+scrolling:
+  history: 90000
