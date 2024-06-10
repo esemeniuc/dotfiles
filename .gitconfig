@@ -11,3 +11,22 @@ lg = !"git lg1"
 	autocrlf = input
 [push]
 	autoSetupRemote = true
+
+
+
+[diff]
+        tool = difftastic
+
+[difftool]
+        prompt = false
+
+[difftool "difftastic"]
+        cmd = difft "$LOCAL" "$REMOTE"
+
+[pager]
+	difftool = true
+
+# `git dft` is less to type than `git difftool`.
+[alias]
+	dft = difftool
+        dlog = "!f() { GIT_EXTERNAL_DIFF=difft git log -p --ext-diff $@; }; f"

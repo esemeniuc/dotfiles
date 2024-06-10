@@ -219,3 +219,6 @@ exec --no-startup-id /usr/lib/mate-polkit/polkit-mate-authentication-agent-1
 exec --no-startup-id redshift
 
 bindsym Control+q nop
+
+for_window [window_role="alert"] floating enable
+no_focus [window_role="alert"]
