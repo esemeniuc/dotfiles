@@ -1,6 +1,7 @@
 [user]
 	name = Eric Semeniuc
 	email = 3838856+esemeniuc@users.noreply.github.com
+	signingkey = /home/eric/.ssh/id_rsa.pub
 [color]
 	ui = auto
 [alias]
@@ -13,18 +14,22 @@ lg = !"git lg1"
 	autoSetupRemote = true
 
 
-
 [diff]
-        tool = difftastic
+    external = difft
 
 [difftool]
-        prompt = false
-
-[difftool "difftastic"]
-        cmd = difft "$LOCAL" "$REMOTE"
+    # Run the difftool immediately, don't ask 'are you sure' each time.
+    prompt = false
 
 [pager]
-	difftool = true
+    # Use a pager if the difftool output is larger than one screenful,
+    # consistent with the behaviour of `git diff`.
+    difftool = true
+
+[diff]
+    # Set difftastic as the default difftool, so we don't need to specify
+    # `-t difftastic` every time.
+    tool = difftastic
 
 # `git dft` is less to type than `git difftool`.
 [alias]
@@ -35,3 +40,7 @@ lg = !"git lg1"
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
