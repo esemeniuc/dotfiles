@@ -70,7 +70,7 @@ zstyle ':omz:update' frequency 130
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git atuin fzf)
+plugins=(git fzf)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -104,8 +104,8 @@ export TERMINAL=alacritty
 export JAVA_HOME=/usr/lib/jvm/default
 export TERM="xterm-256color"
 export ANDROID_SDK=$HOME/Android/Sdk
-export VOLTA_HOME="$HOME/.volta"
 export FZF_DEFAULT_COMMAND='fd --type f'
+export CC=gcc-12 CXX=g++-12
 
 # shell history tweak
 export HISTSIZE=999999999
@@ -129,17 +129,6 @@ alias gdate2='GIT_AUTHOR_DATE=`date -d "2 days ago"` GIT_COMMITTER_DATE=`date -d
 alias grbh='git reset $(git merge-base master $(git rev-parse --abbrev-ref HEAD))'
 alias grsr='git reset --hard --recurse-submodule'
 
-
-JITO_INFRA_DIR=$HOME/dev/infra
-# prod
-alias kam="kubectl --kubeconfig $JITO_INFRA_DIR/block-engine/secrets/mainnet/amsterdam/kubeconfig"
-alias kfm="kubectl --kubeconfig $JITO_INFRA_DIR/block-engine/secrets/mainnet/frankfurt/kubeconfig"
-alias knm="kubectl --kubeconfig $JITO_INFRA_DIR/block-engine/secrets/mainnet/ny/kubeconfig"
-alias ktm="kubectl --kubeconfig $JITO_INFRA_DIR/block-engine/secrets/mainnet/tokyo/kubeconfig"
-
-# test
-alias knt="kubectl --kubeconfig $JITO_INFRA_DIR/block-engine/secrets/testnet/nyc/kubeconfig"
-alias kdt="kubectl --kubeconfig $JITO_INFRA_DIR/block-engine/secrets/testnet/dallas/kubeconfig"
 
 function swap()         
 {
